@@ -14,8 +14,13 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    @song = Song.create(song_params)
-    redirect_to @song
+    @song = Song.new(song_params)
+
+    if @song.save
+      redirect_to @song
+    else
+      render :new
+    end
   end
 
   def edit
