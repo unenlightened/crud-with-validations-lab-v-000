@@ -14,6 +14,8 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
   end
 
   def create
+    @song = Song.new(song_params)
+    
   end
 
   def edit
