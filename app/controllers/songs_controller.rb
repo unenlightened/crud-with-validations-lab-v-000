@@ -27,6 +27,13 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
   end
 
   def update
+    @song.update(song_params)
+
+    if @song.valid?
+      redirect_to @song
+    else
+      render :edit
+    end
   end
 
   def destroy
