@@ -15,7 +15,7 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def create
     @song = Song.new(song_params)
-binding.pry
+
     if @song.save
       redirect_to @song
     else
