@@ -10,6 +10,7 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
   end
 
   def new
+    @song = Song.new
   end
 
   def create
