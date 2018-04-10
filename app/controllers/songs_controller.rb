@@ -14,7 +14,7 @@ before_action :set_song, only: [:show, :edit, :update, :destroy]
   end
 
   def create
-    @song = Song.new(song_params)
+    @song = Song.create(song_params)
     redirect_to @song
   end
 
